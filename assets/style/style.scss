@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "font1";
+    src: url(../fonts/NotoSerifDisplay-VariableFont_wdth\,wght.ttf);
+}
+
+$color1: pink;
+$color2: rgb(247, 67, 187);
+$color3: bisque;
+$font1: "font1",
+"sans-serif";
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+nav {
+    background-color: $color1;
+    padding: 5px;
+    ul {
+        display: flex;
+        justify-content: space-around;
+        li {
+            list-style-type: none;
+        }
+    }
+}
+
+body {
+    font-family: $font1;
+}
+
+h1 {
+    color: $color1;
+    // position: relative;
+    &::after {
+        content: "*";
+        position: absolute;
+        color: $color2;
+        transform: translateX(5px)
+    }
+    &:hover::after {
+        font-size: larger;
+    }
+}
+
+h2 {
+    color: $color1;
+}
+
+.center {
+    min-height: 100px;
+    background-color: $color3;
+    @include center();
+}
+
+p {
+    max-width: 80%;
+}
